@@ -1,0 +1,318 @@
+.about {
+  padding: 100px 0;
+  background: var(--light-bg);
+  position: relative;
+  overflow: hidden;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(246, 213, 92, 0.02) 0%,
+    rgba(45, 45, 45, 0.02) 100%
+  );
+  z-index: 1;
+}
+.about .container {
+  position: relative;
+  z-index: 2;
+}
+.about-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--light-text);
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.feature-item {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 0.8s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+.feature-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(246, 213, 92, 0.1),
+    transparent
+  );
+  transition: left 0.6s;
+}
+.feature-item:hover::before {
+  left: 100%;
+}
+.feature-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.feature-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.feature-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.feature-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.feature-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.feature-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.feature-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  transition: var(--transition);
+  box-shadow: var(--shadow-yellow);
+  position: relative;
+}
+.feature-icon::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-secondary);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition);
+}
+.feature-item:hover .feature-icon::before {
+  opacity: 0.3;
+  animation: pulse 1s ease-in-out infinite;
+}
+.feature-icon i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+.feature-item:hover .feature-icon {
+  transform: scale(1.1) rotate(360deg);
+  box-shadow: 0 8px 25px rgba(246, 213, 92, 0.5);
+}
+.feature-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+.feature-item:hover .feature-content h3 {
+  color: var(--secondary-color);
+}
+.feature-content p {
+  color: var(--light-text);
+  line-height: 1.6;
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  background: var(--white);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-secondary);
+  animation: statsProgress 2s ease-out;
+}
+.stat-item {
+  padding: 1rem;
+  transition: var(--transition);
+}
+.stat-item:hover {
+  transform: scale(1.05);
+}
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+.stat-number::after {
+  content: "+";
+  position: absolute;
+  right: -20px;
+  top: 0;
+  font-size: 0.6em;
+  opacity: 0.7;
+}
+.stat-label {
+  font-size: 1rem;
+  color: var(--light-text);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.skills-section {
+  margin-top: 4rem;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.skill-item {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.skill-name {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.skill-percentage {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.skill-progress {
+  height: 100%;
+  background: var(--gradient-secondary);
+  border-radius: 4px;
+  width: 0;
+  transition: width 2s ease-out;
+  position: relative;
+}
+.skill-progress::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: skillShimmer 2s linear infinite;
+}
+@keyframes statsProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes skillShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@media (max-width: 768px) {
+  .about-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .feature-item {
+    padding: 1.5rem;
+  }
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .feature-icon i {
+    font-size: 1.5rem;
+  }
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+  .stat-number {
+    font-size: 2rem;
+  }
+  .feature-item {
+    padding: 1.2rem;
+  }
+}

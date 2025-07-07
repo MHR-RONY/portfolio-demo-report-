@@ -1,0 +1,31 @@
+@import url("variables.css");
+@import url("navigation.css");
+@import url("hero.css");
+@import url("about.css");
+@import url("portfolio.css");
+@import url("testimonials.css");
+@import url("contact.css");
+@import url("footer.css");
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+@media print {
+  .navbar,
+  .back-to-top,
+  .floating-actions {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .hero,
+  .about,
+  .portfolio,
+  .contact {
+    page-break-inside: avoid;
+  }
+}
