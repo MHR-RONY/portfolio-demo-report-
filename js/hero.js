@@ -2,6 +2,7 @@ class HeroSection {
 	constructor() {
 		this.heroTitle = document.querySelector('.hero-title');
 		this.learnMoreBtn = document.getElementById('learnMoreBtn');
+		this.contactBtn = document.getElementById('contactBtn');
 		this.heroSection = document.querySelector('.hero');
 		this.init();
 	}
